@@ -1,0 +1,11 @@
+# see git-dpm(1) from git-dpm package
+6fc50c219f097786eedc9b3e7849c066adc63e3a
+6fc50c219f097786eedc9b3e7849c066adc63e3a
+6fc50c219f097786eedc9b3e7849c066adc63e3a
+6fc50c219f097786eedc9b3e7849c066adc63e3a
+libgpiod_0.3.2.orig.tar.gz
+64b303cd78f0611092e386ca70c4a10f23a2c191
+49203
+debianTag="debian/%e%v"
+patchedTag="patched/%e%v"
+upstreamTag="upstream/%e%u"
