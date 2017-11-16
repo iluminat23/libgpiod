@@ -1,0 +1,5 @@
+libgpiod (0.3.2-1) unstable; urgency=medium
+
+  * Initial release (Closes: #881728)
+
+ -- SZ Lin (林上智) <szlin@debian.org>  Wed, 15 Nov 2017 10:01:32 +0800
