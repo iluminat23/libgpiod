@@ -51,6 +51,7 @@ Package: libgpiod
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends},
+Multi-Arch: same
 Description: C library for interacting with Linux GPIO device - shared libraries
  libgpiod encapsulates the ioctl calls and data structures
  behind a straightforward API. This new character device
