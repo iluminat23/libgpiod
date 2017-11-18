@@ -1,3 +1,9 @@
+libgpiod (0.3.2-2) unstable; urgency=low
+
+  * d/control: replace arch from "any" to "linux-any" 
+
+ -- SZ Lin (林上智) <szlin@debian.org>  Sat, 18 Nov 2017 12:19:13 +0800
+
 libgpiod (0.3.2-1) unstable; urgency=medium
 
   * Initial release (Closes: #881728)
