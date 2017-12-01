@@ -7,7 +7,7 @@ Build-Depends: debhelper (>= 10),
                automake,
                pkg-config,
                m4
-Standards-Version: 4.1.1
+Standards-Version: 4.1.2
 Build-Depends-Indep: doxygen
 Homepage: https://git.kernel.org/pub/scm/libs/libgpiod/libgpiod.git
 Vcs-Git: https://anonscm.debian.org/git/collab-maint/libgpiod.git
@@ -72,6 +72,4 @@ Description: Tools for interacting with Linux GPIO character device - binary
  behind a straightforward API. This new character device
  open-source and open-drain GPIOs).
  .
- This package contains the gpiod binary tool.
- against hosts.
-
+ This package contains the gpiod binary tools.
