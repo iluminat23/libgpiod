@@ -1,3 +1,11 @@
+libgpiod (0.3.2-3) unstable; urgency=low
+
+  * d/control: Bump Standards-Version to 4.1.2
+  * Make license type consistent between source
+    files and COPYING file
+
+ -- SZ Lin (林上智) <szlin@debian.org>  Fri, 01 Dec 2017 23:21:50 +0800
+
 libgpiod (0.3.2-2) unstable; urgency=low
 
   * d/control: replace arch from "any" to "linux-any"
