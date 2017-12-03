@@ -9,7 +9,7 @@ DEB_HOST_ARCH_OS  ?= $(shell dpkg-architecture -qDEB_HOST_ARCH_OS)
 DEB_HOST_ARCH_CPU ?= $(shell dpkg-architecture -qDEB_HOST_ARCH_CPU)
 
 %:
-	dh $@
+	dh $@ --exclude=.la
 
 override_dh_auto_configure:
 	dh_auto_configure -- \
