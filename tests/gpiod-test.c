@@ -34,8 +34,6 @@
 #define NORETURN	__attribute__((noreturn))
 #define MALLOC		__attribute__((malloc))
 
-static const char mockup_devpath[] = "/devices/platform/gpio-mockup/gpiochip";
-
 static const unsigned int min_kern_major = 4;
 static const unsigned int min_kern_minor = 12;
 static const unsigned int min_kern_release = 6;
@@ -808,6 +806,8 @@ static int chipcmp(const void *c1, const void *c2)
 
 static bool devpath_is_mockup(const char *devpath)
 {
+	static const char mockup_devpath[] = "/devices/platform/gpio-mockup";
+
 	return !strncmp(devpath, mockup_devpath, sizeof(mockup_devpath) - 1);
 }
 
