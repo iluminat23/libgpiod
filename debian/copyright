@@ -1,6 +1,8 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: libgpiod
 Source: https://git.kernel.org/pub/scm/libs/libgpiod/libgpiod.git
+#The upstream changes its license type to "LGPL-2.1+"
+#https://git.kernel.org/pub/scm/libs/libgpiod/libgpiod.git/commit/?h=v0.3.x&id=486b57388683fc4f404fa6cb008c5dbae6fe6c33
 
 Files: *
 Copyright: 2017, by Bartosz Golaszewski <bartekgola@gmail.com>
