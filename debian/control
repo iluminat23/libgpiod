@@ -18,7 +18,7 @@ Section: libdevel
 Architecture: linux-any
 Depends: ${shlibs:Depends},
          ${misc:Depends},
-         libgpiod (= ${binary:Version})
+         libgpiod0 (= ${binary:Version})
 Suggests: libgpiod-doc
 Description: C library for interacting with Linux GPIO device - static libraries and headers
  libgpiod encapsulates the ioctl calls and data structures
@@ -47,7 +47,8 @@ Description: C library for interacting with Linux GPIO device - library document
  This package contains the doxygen generated HTML documentation for the
  libraries.
 
-Package: libgpiod
+Package: libgpiod0
+Section: libs
 Architecture: linux-any
 Depends: ${shlibs:Depends},
          ${misc:Depends},
