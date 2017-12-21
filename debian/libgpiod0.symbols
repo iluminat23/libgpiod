@@ -1,4 +1,4 @@
-libgpiod.so.0 libgpiod #MINVER#
+libgpiod.so.0 libgpiod0 #MINVER#
  gpiod_chip_close@Base 0.3.2+git20171201
  gpiod_chip_get_line@Base 0.3.2+git20171201
  gpiod_chip_iter_done@Base 0.3.2+git20171201
