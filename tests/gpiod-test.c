@@ -3,9 +3,10 @@
  *
  * Copyright (C) 2017 Bartosz Golaszewski <bartekgola@gmail.com>
  *
- * This program is free software; you can redistribute it and/or modify it
- * under the terms of version 2.1 of the GNU Lesser General Public License
- * as published by the Free Software Foundation.
+ * This library is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation; either version 2.1 of the License, or (at
+ * your option) any later version.
  */
 
 #include "gpiod-test.h"
@@ -32,8 +33,6 @@
 
 #define NORETURN	__attribute__((noreturn))
 #define MALLOC		__attribute__((malloc))
-
-static const char mockup_devpath[] = "/devices/platform/gpio-mockup/gpiochip";
 
 static const unsigned int min_kern_major = 4;
 static const unsigned int min_kern_minor = 12;
@@ -807,6 +806,8 @@ static int chipcmp(const void *c1, const void *c2)
 
 static bool devpath_is_mockup(const char *devpath)
 {
+	static const char mockup_devpath[] = "/devices/platform/gpio-mockup";
+
 	return !strncmp(devpath, mockup_devpath, sizeof(mockup_devpath) - 1);
 }
 
