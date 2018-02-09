@@ -1,9 +1,10 @@
 libgpiod (1.0-1) unstable; urgency=medium
 
   * New upstream release
-  * Move VCS to salsa
-  * Bump compat version to 11
-  * Bump standards-version to 4.1.3
+  * d/compat: Bump compat version to 11
+  * d/control: Bump standards-version to 4.1.3
+  *            Move VCS to salsa
+  * d/libgpiod-doc.doc-base: repoint doc-base to /usr/share/doc/libgpiod-dev
 
  -- SZ Lin (林上智) <szlin@debian.org>  Thu, 08 Feb 2018 12:08:50 +0800
 
