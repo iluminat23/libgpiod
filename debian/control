@@ -6,8 +6,9 @@ Build-Depends: debhelper (>= 11),
                libc6,
                automake,
                pkg-config,
-               m4
-Standards-Version: 4.1.4
+               m4,
+               autoconf-archive
+Standards-Version: 4.2.1
 Build-Depends-Indep: doxygen
 Homepage: https://git.kernel.org/pub/scm/libs/libgpiod/libgpiod.git
 Vcs-Git: https://salsa.debian.org/debian/libgpiod.git
@@ -18,7 +19,7 @@ Section: libdevel
 Architecture: linux-any
 Depends: ${shlibs:Depends},
          ${misc:Depends},
-         libgpiod1 (= ${binary:Version})
+         libgpiod2 (= ${binary:Version})
 Suggests: libgpiod-doc
 Description: C library for interacting with Linux GPIO device - static libraries and headers
  libgpiod encapsulates the ioctl calls and data structures
@@ -47,14 +48,14 @@ Description: C library for interacting with Linux GPIO device - library document
  This package contains the doxygen generated HTML documentation for the
  libraries.
 
-Package: libgpiod1
+Package: libgpiod2
 Section: libs
 Architecture: linux-any
 Depends: ${shlibs:Depends},
          ${misc:Depends},
 Multi-Arch: same
-Replaces: libgpiod0
-Conflicts: libgpiod0
+Replaces: libgpiod1
+Conflicts: libgpiod1
 Description: C library for interacting with Linux GPIO device - shared libraries
  libgpiod encapsulates the ioctl calls and data structures
  behind a straightforward API. This new character device
