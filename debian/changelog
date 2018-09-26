@@ -1,3 +1,15 @@
+libgpiod (1.1-1) UNRELEASED; urgency=medium
+
+  * Import new upstream release
+  * Add upstream metadata
+  * Bump ABI version with upstream new release
+  * Converting git-dpm to gbp pq
+  * Add python/cxx bindings
+  * d/control:
+    - Bump standards-version to 4.2.1
+
+ -- SZ Lin (林上智) <szlin@debian.org>  Wed, 12 Sep 2018 14:18:16 +0800
+
 libgpiod (1.0.1-1) unstable; urgency=medium
 
   * New upstream release
