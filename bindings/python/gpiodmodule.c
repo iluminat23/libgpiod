@@ -99,6 +99,8 @@ static void gpiod_LineEvent_dealloc(gpiod_LineEventObject *self)
 {
 	if (self->source)
 		Py_DECREF(self->source);
+
+	PyObject_Del(self);
 }
 
 PyDoc_STRVAR(gpiod_LineEvent_get_type_doc,
@@ -212,6 +214,8 @@ static void gpiod_Line_dealloc(gpiod_LineObject *self)
 {
 	if (self->owner)
 		Py_DECREF(self->owner);
+
+	PyObject_Del(self);
 }
 
 PyDoc_STRVAR(gpiod_Line_owner_doc,
@@ -403,6 +407,7 @@ static PyObject *gpiod_Line_get_value(gpiod_LineObject *self)
 		return NULL;
 
 	ret = PyList_GetItem(vals, 0);
+	Py_INCREF(ret);
 	Py_DECREF(vals);
 
 	return ret;
@@ -763,6 +768,7 @@ static void gpiod_LineBulk_dealloc(gpiod_LineBulkObject *self)
 		Py_DECREF(self->lines[i]);
 
 	PyMem_RawFree(self->lines);
+	PyObject_Del(self);
 }
 
 static PyObject *gpiod_LineBulk_iternext(gpiod_LineBulkObject *self)
@@ -881,7 +887,7 @@ static PyObject *gpiod_LineBulk_request(gpiod_LineBulkObject *self,
 
 	rv = PyArg_ParseTupleAndKeywords(args, kwds, "s|iiO", kwlist,
 					 &consumer, &type,
-					 &flags, &default_vals);
+					 &flags, &def_vals_obj);
 	if (!rv)
 		return NULL;
 
@@ -1018,8 +1024,10 @@ static PyObject *gpiod_LineBulk_set_values(gpiod_LineBulkObject *self,
 
 		val = PyLong_AsLong(next);
 		Py_DECREF(next);
-		if (PyErr_Occurred())
+		if (PyErr_Occurred()) {
+			Py_DECREF(iter);
 			return NULL;
+		}
 
 		vals[i] = (int)val;
 	}
@@ -1288,6 +1296,8 @@ static void gpiod_Chip_dealloc(gpiod_ChipObject *self)
 {
 	if (self->chip)
 		gpiod_chip_close(self->chip);
+
+	PyObject_Del(self);
 }
 
 static PyObject *gpiod_Chip_repr(gpiod_ChipObject *self)
@@ -1562,7 +1572,7 @@ gpiod_Chip_get_all_lines(gpiod_ChipObject *self)
 	struct gpiod_line_bulk bulk;
 	gpiod_LineObject *line_obj;
 	struct gpiod_line *line;
-	Py_ssize_t offset;
+	unsigned int offset;
 	PyObject *list;
 	int rv;
 
@@ -1775,6 +1785,8 @@ static void gpiod_ChipIter_dealloc(gpiod_ChipIterObject *self)
 {
 	if (self->iter)
 		gpiod_chip_iter_free_noclose(self->iter);
+
+	PyObject_Del(self);
 }
 
 static gpiod_ChipObject *gpiod_ChipIter_next(gpiod_ChipIterObject *self)
@@ -1846,6 +1858,8 @@ static void gpiod_LineIter_dealloc(gpiod_LineIterObject *self)
 {
 	if (self->iter)
 		gpiod_line_iter_free(self->iter);
+
+	PyObject_Del(self);
 }
 
 static gpiod_LineObject *gpiod_LineIter_next(gpiod_LineIterObject *self)
