@@ -1,10 +1,18 @@
-libgpiod (1.1-1) UNRELEASED; urgency=medium
+libgpiod (1.1.1-1) experimental; urgency=medium
 
   * Import new upstream release
   * Add upstream metadata
+  * Add python/cxx bindings (LP: #1791124)
+  * d/patches
+    - Add Fix-FTBFS-with-bindings-cxx-examples-gpiod_cxx_tests patch
+
+ -- SZ Lin (林上智) <szlin@debian.org>  Fri, 28 Sep 2018 16:25:28 +0800
+
+libgpiod (1.1-1) UNRELEASED; urgency=medium
+
+  * Import new upstream release
   * Bump ABI version with upstream new release
   * Converting git-dpm to gbp pq
-  * Add python/cxx bindings
   * d/control:
     - Bump standards-version to 4.2.1
 
