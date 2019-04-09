@@ -5,6 +5,7 @@ Maintainer: SZ Lin (林上智) <szlin@debian.org>
 Build-Depends: debhelper (>= 12),
                autoconf-archive,
                automake,
+               help2man,
                pkg-config,
                m4,
                python3-dev,
