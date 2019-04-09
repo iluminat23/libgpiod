@@ -56,8 +56,6 @@ Architecture: linux-any
 Depends: ${shlibs:Depends},
          ${misc:Depends},
 Multi-Arch: same
-Replaces: libgpiod1
-Conflicts: libgpiod1
 Description: C library for interacting with Linux GPIO device - shared libraries
  libgpiod encapsulates the ioctl calls and data structures
  behind a straightforward API. This new character device
