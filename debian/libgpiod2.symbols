@@ -1,4 +1,5 @@
 libgpiod.so.2 libgpiod2 #MINVER#
+* Build-Depends-Package: libgpiod-dev
  gpiod_chip_close@Base 1.1
  gpiod_chip_find_line@Base 1.1
  gpiod_chip_find_lines@Base 1.1
