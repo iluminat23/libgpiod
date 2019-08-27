@@ -120,7 +120,8 @@ EXPORT struct gpio_mockup *gpio_mockup_new(void)
 	 * Then see if we can freely load and unload it. If it's already
 	 * loaded - no problem, we'll remove it next anyway.
 	 */
-	rv = kmod_module_probe_insert_module(ctx->module, 0,
+	rv = kmod_module_probe_insert_module(ctx->module,
+					     KMOD_PROBE_IGNORE_LOADED,
 					     "gpio_mockup_ranges=-1,4",
 					     NULL, NULL, NULL);
 	if (rv)
@@ -304,11 +305,7 @@ EXPORT int gpio_mockup_probe(struct gpio_mockup *ctx, unsigned int num_chips,
 	if (!ctx->chips)
 		goto err_remove_module;
 
-	for (i = 0; i < num_chips; i++) {
-		ctx->chips[i] = malloc(sizeof(struct gpio_mockup_chip));
-		if (!ctx->chips[i])
-			goto err_free_chips;
-	}
+	ctx->num_chips = num_chips;
 
 	pfd.fd = udev_monitor_get_fd(monitor);
 	pfd.events = POLLIN | POLLPRI;
