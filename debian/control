@@ -19,6 +19,7 @@ Vcs-Browser: https://salsa.debian.org/debian/libgpiod
 Package: libgpiod-dev
 Section: libdevel
 Architecture: linux-any
+Multi-Arch: same
 Depends: ${shlibs:Depends},
          ${misc:Depends},
          libgpiod2 (= ${binary:Version})
@@ -37,6 +38,7 @@ Description: C library for interacting with Linux GPIO device - static libraries
 Package: libgpiod-doc
 Section: doc
 Architecture: all
+Multi-Arch: foreign
 Depends: ${misc:Depends}
 Description: C library for interacting with Linux GPIO device - library documentation
  libgpiod encapsulates the ioctl calls and data structures
@@ -69,6 +71,7 @@ Description: C library for interacting with Linux GPIO device - shared libraries
 
 Package: gpiod
 Architecture: linux-any
+Multi-Arch: foreign
 Depends: ${shlibs:Depends},
          ${misc:Depends},
 Description: Tools for interacting with Linux GPIO character device - binary
@@ -85,6 +88,7 @@ Description: Tools for interacting with Linux GPIO character device - binary
 Package: python3-libgpiod
 Section: python
 Architecture: linux-any
+Multi-Arch: same
 Depends: ${shlibs:Depends},
          ${misc:Depends},
          ${python3:Depends},
