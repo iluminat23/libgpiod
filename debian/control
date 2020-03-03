@@ -5,11 +5,12 @@ Maintainer: SZ Lin (林上智) <szlin@debian.org>
 Build-Depends: debhelper-compat (= 12),
                autoconf-archive,
                automake,
+               dh-sequence-python3 <!nopython>,
                help2man,
                pkg-config,
                m4,
-               python3-dev,
-               python3-setuptools
+               python3-dev <!nopython>,
+               python3-setuptools <!nopython>
 Standards-Version: 4.5.0
 Build-Depends-Indep: doxygen
 Homepage: https://git.kernel.org/pub/scm/libs/libgpiod/libgpiod.git
@@ -86,6 +87,7 @@ Description: Tools for interacting with Linux GPIO character device - binary
  This package contains the gpiod binary tools.
 
 Package: python3-libgpiod
+Build-Profiles: <!nopython>
 Section: python
 Architecture: linux-any
 Multi-Arch: same
