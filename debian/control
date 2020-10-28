@@ -11,7 +11,8 @@ Build-Depends: debhelper-compat (= 13),
                m4,
                python3-dev:any <!nopython>,
                libpython3-dev <!nopython>,
-               python3-setuptools <!nopython>
+               python3-setuptools <!nopython>,
+               linux-libc-dev (>= 5.5)
 Standards-Version: 4.5.0
 Rules-Requires-Root: no
 Build-Depends-Indep: doxygen
