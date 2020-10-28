@@ -6,10 +6,11 @@ Build-Depends: debhelper-compat (= 13),
                autoconf-archive,
                automake,
                dh-sequence-python3 <!nopython>,
-               help2man,
+               help2man <!cross>,
                pkg-config,
                m4,
-               python3-dev <!nopython>,
+               python3-dev:any <!nopython>,
+               libpython3-dev <!nopython>,
                python3-setuptools <!nopython>
 Standards-Version: 4.5.0
 Rules-Requires-Root: no
