@@ -472,7 +472,7 @@ static PyObject *gpiod_Line_request(gpiod_LineObject *self,
 	gpiod_LineBulkObject *bulk_obj;
 	int rv;
 
-	if (PyDict_Size(kwds) > 0) {
+	if (kwds && PyDict_Size(kwds) > 0) {
 		def_val = PyDict_GetItemString(kwds, "default_val");
 		def_vals = PyDict_GetItemString(kwds, "default_vals");
 	} else {
@@ -1874,7 +1874,7 @@ PyDoc_STRVAR(gpiod_LineBulkType_doc,
 static PyTypeObject gpiod_LineBulkType = {
 	PyVarObject_HEAD_INIT(NULL, 0)
 	.tp_name = "gpiod.LineBulk",
-	.tp_basicsize = sizeof(gpiod_LineBulkType),
+	.tp_basicsize = sizeof(gpiod_LineBulkObject),
 	.tp_flags = Py_TPFLAGS_DEFAULT,
 	.tp_doc = gpiod_LineBulkType_doc,
 	.tp_new = PyType_GenericNew,
