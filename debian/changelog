@@ -1,4 +1,4 @@
-libgpiod (1.6-1) UNRELEASED; urgency=medium
+libgpiod (1.6.1-1) unstable; urgency=medium
 
   * Import new upstream release
   * Fix event timestamp calculation for 32bit (Closes: #972263)
@@ -8,7 +8,7 @@ libgpiod (1.6-1) UNRELEASED; urgency=medium
     - Multiarchify python Build-Depends.
     - Install pre-built manpages during cross builds.
 
- -- SZ Lin (林上智) <szlin@debian.org>  Wed, 28 Oct 2020 14:45:38 +0800
+ -- SZ Lin (林上智) <szlin@debian.org>  Wed, 04 Nov 2020 15:48:20 +0800
 
 libgpiod (1.5.2-1) unstable; urgency=medium
 
